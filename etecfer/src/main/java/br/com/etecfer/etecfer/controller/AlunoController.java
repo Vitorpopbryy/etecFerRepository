@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.etecfer.etecfer.entity.Aluno;
 import br.com.etecfer.etecfer.service.AlunoService;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -38,6 +37,12 @@ public class AlunoController {
        List<Aluno> alunos = alunoService.findAll();
        model.addAttribute("alunos", alunos);
         return "aluno/ListarAlunos";
+    }
+    //metodo para criar um formulario com um novo objeto aluno
+    @GetMapping("/criar")
+    public String criarForm(Model model) {
+        model.addAttribute("aluno", new Aluno());
+        return "aluno/formularioAluno";
     }
     
     
