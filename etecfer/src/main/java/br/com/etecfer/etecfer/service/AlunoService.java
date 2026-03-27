@@ -1,6 +1,7 @@
 package br.com.etecfer.etecfer.service;
 
-import java.security.spec.DSAGenParameterSpec;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,8 @@ public class AlunoService {
     public Aluno save(Aluno aluno){
         return alunoRepository.save(aluno);
     }
-
+   //metodo para listar todos os alunos
+   public List<Aluno> findAll(){
+    return alunoRepository.findAll();
+   }
 }
